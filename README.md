@@ -1,7 +1,8 @@
 
 # PEOPLE-ECCO EOAP Example Algorithm
 
-This repository stores a beta version of the flow to map Subaquatic vegetation and coral presence from openeo.
+This repository provides an example on how to integrate a Python based algorithm
+into the EOAP framework which makes it also compatible with the PEOPLE-ECCO platform.
 
 ## Development
 
