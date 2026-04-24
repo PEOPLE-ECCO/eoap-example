@@ -18,12 +18,11 @@ Running as CWL Workflow requires `docker` and [`cwltool` (Link)](https://github.
 
 #### Build the docker image
 
-All PEOPLE-ECCO algorithm docker images are based on the `ecco-api-base` image. It is defined at
-https://github.com/PEOPLE-ECCO/ecco-api/blob/main/eo/algorithms/base.Dockerfile
-which must be built beforehand.
+Note: all PEOPLE-ECCO algorithm docker images are based on the `ecco-algorithm-base` image. It is defined at
+https://github.com/PEOPLE-ECCO/ecco-algorithm-base/blob/main/Dockerfile and is available via ghcr.io.
 
 ```sh
-docker build -t ecco-eoap-example:latest .
+docker build -t ghcr.io/people-ecco/ecco-eoap-example:latest .
 ```
 
 #### Execute the CWL
