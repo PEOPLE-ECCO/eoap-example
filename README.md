@@ -34,9 +34,31 @@ In order to run, the scripts requires several environment variables:
 - `OPENEO_AUTH_CLIENT_ID` = openeo client id
 - `OPENEO_AUTH_CLIENT_SECRET` = openeo client secret
 
-You can use a `.env` file. See `example.env`.
+You can use a `.env` file. See `example.env`, or:
 
-Additionally a JSON File with the parameters for the algorithm run must be provided. An example of the available parameters is provided in `example_parameters.json`.
+```
+TEST_PATH=./target
+OPENEO_AUTH_CLIENT_ID=client-id
+OPENEO_AUTH_CLIENT_SECRET=client-secret
+
+```
+
+Additionally a JSON File with the parameters for the algorithm run must be provided. An example of the available parameters is provided in `example_parameters.json`, or:
+
+```json
+{
+  "rangestart": "2023-01-01",
+  "rangeend": "2023-01-23",
+  "spatial_extent": {
+    "west": 118.545313,
+    "south": 4.537418,
+    "east": 118.568237,
+    "north": 4.553655,
+    "crs": "EPSG:4326"
+  },
+  "maxcloudcover": 40
+}
+```
 
 
 

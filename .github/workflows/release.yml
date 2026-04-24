@@ -65,11 +65,8 @@ jobs:
 
       - name: Create EOAP directory structure
         run: |
-          mkdir -p eoap-package/app
-          cp run.cwl Dockerfile requirements.txt eoap-package/
-          cp -r src eoap-package/app/
-          # Assuming cwl_wrapper.py is in the root
-          cp cwl_wrapper.py eoap-package/app/
+          mkdir -p eoap-package
+          cp run.cwl example_parameters.json example.env README.md eoap-package/
 
       - name: Create Tarball
         run: |
