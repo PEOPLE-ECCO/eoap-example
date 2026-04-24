@@ -41,7 +41,7 @@ $graph:
 
   requirements:
     DockerRequirement:
-      dockerPull: ecco-eoap-example:latest
+      dockerPull: "ghcr.io/PEOPLE-ECCO/ecco-eoap-example:latest" # Or your actual image path
     EnvVarRequirement:
       envDef:
         - envName: PYTHONPATH
