@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=ecco-api-base:latest
+ARG BASE_IMAGE=ghcr.io/people-ecco/ecco-algorithm-base:latest
 FROM ${BASE_IMAGE}
 
 # Algorithm base path
