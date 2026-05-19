@@ -42,6 +42,7 @@ def main(conn: Connection, in_path: Path, parameters: Parameters) -> None:
         print("Start execute_batch data-download")
         job.start_and_wait()
         results = job.get_results()
+        print(f"Results for the job: {results}")
         results.download_files(save_path)
     except JobFailedException as e:
         print("Openeo job failed. There might be no scene available.")

@@ -49,9 +49,7 @@ class Algorithm:
                 download(conn, Path(workdir), params)
 
                 print(f"Triggering postprocess")
-                postprocess(Path(workdir),
-                        Path(Path(__file__).resolve().parent) / "models",
-                        catalog)
+                postprocess(Path(workdir), catalog)
 
         except Exception as e:
             # TODO: improve error logging

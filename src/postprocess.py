@@ -18,7 +18,7 @@ from shapely.geometry import Polygon, mapping
 from datetime import datetime, timezone
 
 
-def main(work_dir: Path, model_dir: Path, catalog: Catalog) -> None:
+def main(work_dir: Path, catalog: Catalog) -> None:
 
     tif_dir = work_dir / "openeo_tifs"
 
@@ -43,10 +43,25 @@ def main(work_dir: Path, model_dir: Path, catalog: Catalog) -> None:
 
             metadata = {"epsg": "32650"}
 
-            item = pystac.Item(id=file_path.name,
+            item_id = file_path.name
+
+            # resolve the datetime in the semantics of STAC (-> time for data coverage ~= sampling time)
+            dt = datetime.now(tz=timezone.utc) # default fallback
+            item_id_wo_ext = item_id.split(".")[0]
+            if ("_" in item_id_wo_ext):
+                chunks = item_id_wo_ext.split("_")
+                for c in chunks:
+                    print(f"parsing datetime from: {c[:10]}")
+                    try:
+                        dt = datetime.fromisoformat(c[:10])
+                        break
+                    except ValueError:
+                        pass
+
+            item = pystac.Item(id=item_id,
                                geometry=json.loads(shapely.to_geojson(footprint)),
                                bbox=bbox,
-                               datetime=datetime.now(tz=timezone.utc),
+                               datetime=dt,
                                properties=metadata)
 
             item.add_asset(
