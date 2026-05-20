@@ -8,13 +8,13 @@ into the EOAP framework which makes it also compatible with the PEOPLE-ECCO plat
 
 ### Run locally
 
-Running as CWL Workflow requires `docker` and [`cwltool` (Link)](https://github.com/common-workflow-language/cwltool).
+Running as CWL Workflow requires `docker` and [`cwlref-runner` (Link)](https://github.com/common-workflow-language/cwltool).
 
 #### Installing cwltool in Python virtual environment
 
 1. `$ python3 -m venv env`
 2. `$ source env/bin/activate`
-3. `$ pip install cwltool`
+3. `$ pip install cwlref-runner`
 
 #### Build the docker image
 
